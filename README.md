@@ -1,13 +1,14 @@
 # Ghost-ADB
+
 ![Menu Ghost-ADB](awal.png)
 
 _Contoh menu awal Ghost-ADB_
 
-![Perintah Ghost-ADB](perintah.png)
+![Perintah Ghost-ADB](/img/view-adb.png)
 
 **Skript kontrol ADB (Android Debug Bridge) berbasis Bash**
 
-Repositori ini berisi `android-adb.sh`, sebuah skrip yang
+Repositori ini berisi `Ghost-Adb.sh`, sebuah skrip yang
 memanfaatkan `adb` untuk mengendalikan dan mengumpulkan data dari
 perangkat Android melalui koneksi USB ataupun TCP/IP. Fitur utamanya
 termasuk dump SMS, riwayat panggilan, kontak, kontrol kamera dan
@@ -45,20 +46,20 @@ layar, hingga operasi sistem lanjutan.
    ```
 3. Clone atau unduh repositori skrip:
    ```bash
-   git clone https://github.com/Sneijderlino/Hack-Android-RAT.git    # gunakan repo Anda
-   cd android-adb
-   chmod +x android-adb.sh                                   # berikan izin eksekusi
+   git clone https://github.com/youruser/Ghost-ADB.git    # gunakan alamat repositori Ghost-ADB Anda
+   cd Ghost-ADB    # atau direktori tempat skrip berada
+   chmod +x Ghost-Adb.sh                                   # berikan izin eksekusi
    ```
 4. Jalankan skrip untuk mulai menggunakan:
    ```bash
-   ./android-adb.sh
+   ./Ghost-Adb.sh
    ```
 
 Untuk akses dari mana saja, tambahkan lokasi skrip ke PATH atau buat
 symlink:
 
 ```bash
-sudo ln -s $(pwd)/android-adb.sh /usr/local/bin/ghost-adb
+sudo ln -s $(pwd)/Ghost-Adb.sh /usr/local/bin/ghost-adb
 ```
 
 ### Termux
@@ -68,12 +69,12 @@ pkg update && pkg upgrade -y
 pkg install adb termux-api -y
 ```
 
-Kemudian clone repositori resmi:
+Kemudian clone repositori Ghost-ADB:
 
 ```bash
-git clone https://github.com/Sneijderlino/Hack-Android-RAT.git
-cd Hack-Android-RAT
-chmod +x android-adb.sh
+git clone https://github.com/youruser/Ghost-ADB.git
+cd Ghost-ADB
+chmod +x Ghost-Adb.sh
 ```
 
 Lalu jalankan skrip di dalam Termux.
@@ -99,7 +100,7 @@ Lalu jalankan skrip di dalam Termux.
 Contoh menjalankan (dari direktori skrip atau lewat symlink):
 
 ```bash
-./android-adb.sh      # jika berada di folder skrip
+./Ghost-Adb.sh      # jika berada di folder skrip
 # atau, jika sudah membuat symlink di /usr/local/bin:
 ghost-adb             # panggil langsung dari PATH
 ```
@@ -113,7 +114,7 @@ shell manual.
 ## 🗂️ Struktur Repo
 
 ```
-android-adb.sh   # skrip utama
+Ghost-Adb.sh   # skrip utama
 README.md        # dokumentasi ini
 .config_adb/     # cache IP & perangkat
 ADB_LOOT/        # hasil dump/perintah
@@ -137,4 +138,5 @@ fitur, perbaiki bug, atau perjelas dokumentasi.
 ---
 
 > _Terakhir diperbarui: 25 Februari 2026_
+
 # Hack-Android-RAT
