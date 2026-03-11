@@ -34,15 +34,22 @@ layar, hingga operasi sistem lanjutan.
 
 ## 🧱 Instalasi
 
+> Sebelum memulai, tinjau `requirements.txt` untuk daftar paket
+> yang diperlukan.
+>
+> ```bash
+> cat requirements.txt
+> ```
+
 ### Kali Linux
 
 1. Update daftar paket dan tingkatkan sistem:
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
-2. Pasang `adb` (dan `scrcpy` jika ingin mirror layar):
+2. Pasang paket yang tercantum dalam `requirements.txt`:
    ```bash
-   sudo apt install android-tools-adb scrcpy -y
+   sudo apt install $(grep -v '^#' requirements.txt) -y
    ```
 3. Clone atau unduh repositori skrip:
    ```bash
@@ -137,6 +144,13 @@ fitur, perbaiki bug, atau perjelas dokumentasi.
 
 ---
 
-> _Terakhir diperbarui: 25 Februari 2026_
+> ### 🔄 Pembaruan Terbaru
+>
+> - Skrip utama (`Ghost-Adb.sh`) telah diperbarui. Pastikan untuk
+>   mengunduh versi terbaru atau menjalankan `git pull` jika Anda
+>   menggunakan klon repositori.
+> - Perubahan lain disertakan dalam catatan commit.
+>
+> _Terakhir diperbarui: 12 Maret 2026_
 
 # Hack-Android-RAT

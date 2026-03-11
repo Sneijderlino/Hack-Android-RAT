@@ -1,0 +1,7 @@
+
+android-tools-adb  
+scrcpy           
+bash             
+coreutils         
+
+termux-api        
