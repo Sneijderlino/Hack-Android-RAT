@@ -37,45 +37,53 @@ recon_target() {
     fi
 }
 
+#!/bin/bash
+
+RED="\033[1;31m"
+CYAN="\033[1;36m"
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+MAGENTA="\033[1;35m"
+WHITE="\033[1;37m"
+RESET="\033[0m"
+BOLD="\033[1m"
+
 header() {
-    tput reset
-    recon_target
-    
-    echo -e "${RED}${BOLD}"
 
-    echo -e "           uuuuuuu             "
-    echo -e "       uu\$\$\$\$\$\$\$\$\$\$\$uu         "
-    echo -e "    uu\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$uu      "
-    
+tput clear
 
-    echo -e "   u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u      ${BLUE}[GHOST-ADB]${RED}"
-    echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${RED}[Android RAT]${RED}"
-    echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${YELLOW}[Tools BY:Sneijderlino]${RED}"
-    echo -e "  u\$\$\$\$\$\$\"   \"\$\$\$\"   \"\$\$\$\$u     ${GREEN}──────────────────────${RED}"
-    
+echo -e "${RED}${BOLD}           uuuuuuuu${RESET}"
+echo -e "${RED}${BOLD}       uu\$\$\$\$\$\$\$\$\$\$\$\$\$uu${RESET}"
+echo -e "${RED}${BOLD}    uu\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$uu${RESET}"
+echo -e "${RED}${BOLD}   u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u        ${BLUE}[ GHOST-ADB ]${RESET}"
+echo -e "${RED}${BOLD}  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${RED}[Android Remote Control]${RESET}"
+echo -e "${RED}${BOLD}  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${YELLOW}[Tools By: Sneijderlino]${RESET}"
+echo -e "${RED}${BOLD}  u\$\$\$\$\$\$\"   \"\$\$\$\"   \"\$\$\$\$u${RESET}"
+echo -e "${RED}${BOLD}  \"\$\$\$\$\"      u\$u       \"\$\$\$\"${RESET}"
+echo -e "${RED}${BOLD}   \$\$\$u       u\$u       u\$\$\$${RESET}"
+echo -e "${RED}${BOLD}   \$\$\$u      u\$\$\$u      u\$\$\$${RESET}"
+echo -e "${RED}${BOLD}    \"\$\$\$\$uu\$\$\$   \$\$\$uu\$\$\$\$\"${RESET}"
+echo -e "${RED}${BOLD}     \"\$\$\$\$\$\$\$\"   \"\$\$\$\$\$\$\$\"${RESET}"
+echo -e "${RED}${BOLD}       u\$\$\$\$\$\$\$u\$\$\$\$\$\$\$u${RESET}"
+echo -e "${RED}${BOLD}        u\$\"\$\"\$\"\$\"\$\"\$\"\$u${RESET}"
+echo -e "${RED}${BOLD}         \$\$u\$u\$u\$u\$u\$\$${RESET}"
+echo -e "${RED}${BOLD}          \$\$\$\$\$\$\$\$\$\$\$${RESET}"
+echo -e "${RED}${BOLD}           \"\$\$\$\$\$\$\$\"${RESET}"
 
-    echo -e "  \"\$\$\$\$\"      u\$u       \"\$\$\$\"   "   
+echo
+echo -e "${GREEN}═══════════════════════════════════════════════════════${RESET}"
+echo -e "${CYAN} DEVICE RECON   :${RED} Android System Information Scanner"
+echo -e "${CYAN} CONNECTION CORE:${RED} Wireless ADB Pairing & Debug Bridge"
+echo -e "${CYAN} NETWORK SCAN   :${RED} Automatic ADB Device Discovery"
+echo -e "${CYAN} CONTROL PANEL  :${RED} Android Device Command Interface"
+echo -e "${CYAN} STATUS         :${YELLOW} Waiting ADB Device Connection..."
+echo -e "${GREEN}═══════════════════════════════════════════════════════${RESET}"
 
-    echo -e "   \$\$\$u       u\$u       u\$\$\$    "                                                  
-    echo -e "   \$\$\$u      u\$\$\$u      u\$\$\$    "                                            
-    echo -e "    \"\$\$\$\$uu\$\$\$   \$\$\$uu\$\$\$\$\"    "
-    echo -e "     \"\$\$\$\$\$\$\$\"   \"\$\$\$\$\$\$\$\"    "
-    echo -e "       u\$\$\$\$\$\$\$u\$\$\$\$\$\$\$u       "
-    echo -e "        u\$\"\$\"\$\"\$\"\$\"\$\"\$u        "
-    echo -e "         \$\$u\$u\$u\$u\$u\$\$         "
-    echo -e "          \$\$\$\$\$\$\$\$\$\$\$          "
-    echo -e "           \"\$\$\$\$\$\$\$\"           "
-    
+echo -e "${RED}${BOLD}[ ○ ] MENUNGGU PERANGKAT TERHUBUNG... [ ○ ]${RESET}"
 
-    echo -e "${GREEN}  ════════════════════════════════════════════════════════${RESET}"
-    if [ "$CONNECTED" = true ]; then
-        echo -e "   TARGET : ${CYAN}$MODEL (A$ANDROID_VER)${RESET} | $ROOT_S"
-        echo -e "   POWER  : ${GREEN}$BATT%${RESET} | WA: ${YELLOW}$WA_TYPE${RESET}"
-    else
-        echo -e "   ${RED}${BOLD}    [ ○ ] MENUNGGU PERANGKAT TERHUBUNG... [ ○ ]${RESET}"
-    fi
-    echo -e "${GREEN}  ════════════════════════════════════════════════════════${RESET}"
 }
+
+header
 auto_connect() {
     echo -e "${YELLOW}[*] Memulai Mode Hunting...${RESET}"
     echo -e "${GRAY}(Tekan CTRL+C untuk membatalkan)${RESET}"
@@ -189,11 +197,11 @@ menu_otomatis() {
 
 while true; do
     recon_target; header
-    echo -e " 1) ⚡ CONNECT CACHE       5) 🔄 RESET ADB"
-    echo -e " 2) 🔐 PAIRING MANUAL      6) 📡 SWITCH TCP 5555"
-    echo -e " 3) 💀 GHOST COMMANDS      7) 🔗 CONNECT DIRECT TCP"
-    echo -e " 4) 🐚 MANUAL VOID SHELL   8) 🚀 ${CYAN}START HUNTING (AUTO-SCAN)${RESET}"
-    echo -e " q) EXIT"
+    echo -e " 1) ⚡ ${GREEN}CONNECT CACHE${RESET}       5) 🔄 ${GREEN}RESET ADB${RESET}"
+    echo -e " 2) 🔐 ${GREEN}PAIRING MANUAL${RESET}      6) 📡 ${GREEN}SWITCH TCP 5555${RESET}"
+    echo -e " 3) 💀 ${GREEN}GHOST COMMANDS${RESET}      7) 🔗 ${GREEN}CONNECT DIRECT TCP${RESET}"
+    echo -e " 4) 🐚 ${GREEN}MANUAL VOID SHELL${RESET}   8) 🚀 ${BLUE}START HUNTING (AUTO-SCAN)${RESET}"
+    echo -e " q) ${RED}EXIT${RESET}"
     tput cnorm; read -p " ghost@kali-neraka › " M; tput civis
     case $M in
         1) T=$(tail -n 1 "$CACHE_FILE" 2>/dev/null); [ ! -z "$T" ] && adb connect "$T" ;;
