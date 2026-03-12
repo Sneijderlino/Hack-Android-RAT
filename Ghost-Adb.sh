@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# =================================================================
+# GHOST-ADB OMNIPOTENCE v44.5 (TOTAL FINAL EDITION)
+# PONDASI: v42.1 (HUNTING EDITION) - TIDAK ADA FITUR DIHAPUS
+# TAMBAHAN: Full Camera (Front/Back), Video, PIN Logger, Sound Prank
+# =================================================================
+
 RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"
 BLUE="\e[1;34m"; MAGENTA="\e[1;35m"; CYAN="\e[1;36m"
 WHITE="\e[1;37m"; RESET="\e[0m"; BOLD="\e[1m"; GRAY="\e[1;90m"
@@ -36,37 +44,43 @@ recon_target() {
 
 header() {
     tput reset
+    recon_target # Update info perangkat
+    
     echo -e "${RED}${BOLD}"
-    cat << "EOF"
-           uuuuuuu
-       uu$$$$$$$$$$$uu
-    uu$$$$$$$$$$$$$$$$$uu
-   u$$$$$$$$$$$$$$$$$$$$$u
-  u$$$$$$$$$$$$$$$$$$$$$$$u
-  u$$$$$$$$$$$$$$$$$$$$$$$u
-  u$$$$$$"   "$$$"   "$$$$u
-  "$$$$"      u$u       "$$$"
-   $$$u       u$u       u$$$
-   $$$u      u$$$u      u$$$
-    "$$$$uu$$$   $$$uu$$$$"
-     "$$$$$$$"   "$$$$$$$"
-       u$$$$$$$u$$$$$$$u
-        u$"$"$"$"$"$"$u
-         $$u$u$u$u$u$$
-          $$$$$$$$$$$
-           "$$$$$$$"
- GHOST-ADB | OMNIPOTENCE v44.5
-  ═══════════════════════════════════════
-EOF
-    if [ "$CONNECTED" = true ]; then
-        echo -e " TARGET : ${CYAN}$MODEL (A$ANDROID_VER)${RESET} | $ROOT_S"
-        echo -e " POWER  : ${GREEN}$BATT%${RESET} | WA: ${YELLOW}$WA_TYPE${RESET}"
-    else
-        echo -e " ${RED}${BOLD}    [ ○ ] MENUNGGU JIWA TERHUBUNG... [ ○ ]${RESET}"
-    fi
-    echo -e "${RED}  ═══════════════════════════════════════${RESET}"
-}
+    # Baris 1-3: Kosongkan sampingnya agar teks tidak terlalu ke atas
+    echo -e "           uuuuuuu             "
+    echo -e "       uu\$\$\$\$\$\$\$\$\$\$\$uu         "
+    echo -e "    uu\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$uu      "
+    
+    # Baris 4-7: Mulai isi teks di samping (Sejajar Tengah)
+    echo -e "   u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u      ${BLUE}[GHOST-ADB]${RED}"
+    echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${RED}[Android RAT]${RED}"
+    echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${YELLOW}[Tools BY:Sneijderlino]${RED}"
+    echo -e "  u\$\$\$\$\$\$\"   \"\$\$\$\"   \"\$\$\$\$u     ${GREEN}──────────────────────${RED}"
+    
+    # Baris 8 ke bawah: Sisa gambar tengkorak
+    echo -e "  \"\$\$\$\$\"      u\$u       \"\$\$\$\"   "   
 
+    echo -e "   \$\$\$u       u\$u       u\$\$\$    "                                                  
+    echo -e "   \$\$\$u      u\$\$\$u      u\$\$\$    "                                            
+    echo -e "    \"\$\$\$\$uu\$\$\$   \$\$\$uu\$\$\$\$\"    "
+    echo -e "     \"\$\$\$\$\$\$\$\"   \"\$\$\$\$\$\$\$\"    "
+    echo -e "       u\$\$\$\$\$\$\$u\$\$\$\$\$\$\$u       "
+    echo -e "        u\$\"\$\"\$\"\$\"\$\"\$\"\$u        "
+    echo -e "         \$\$u\$u\$u\$u\$u\$\$         "
+    echo -e "          \$\$\$\$\$\$\$\$\$\$\$          "
+    echo -e "           \"\$\$\$\$\$\$\$\"           "
+    
+    # Bagian Status Perangkat (Garis Bawah)
+    echo -e "${GREEN}  ════════════════════════════════════════════════════════${RESET}"
+    if [ "$CONNECTED" = true ]; then
+        echo -e "   TARGET : ${CYAN}$MODEL (A$ANDROID_VER)${RESET} | $ROOT_S"
+        echo -e "   POWER  : ${GREEN}$BATT%${RESET} | WA: ${YELLOW}$WA_TYPE${RESET}"
+    else
+        echo -e "   ${RED}${BOLD}    [ ○ ] MENUNGGU PERANGKAT TERHUBUNG... [ ○ ]${RESET}"
+    fi
+    echo -e "${GREEN}  ════════════════════════════════════════════════════════${RESET}"
+}
 auto_connect() {
     echo -e "${YELLOW}[*] Memulai Mode Hunting...${RESET}"
     echo -e "${GRAY}(Tekan CTRL+C untuk membatalkan)${RESET}"

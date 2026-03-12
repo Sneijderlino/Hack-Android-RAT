@@ -1,10 +1,10 @@
 # Ghost-ADB
 
-![Menu Ghost-ADB](awal.png)
+![Menu Ghost-ADB](/img/view-adb.png)
 
 _Contoh menu awal Ghost-ADB_
 
-![Perintah Ghost-ADB](/img/view-adb.png)
+![Perintah Ghost-ADB](/img/Command.png)
 
 **Skript kontrol ADB (Android Debug Bridge) berbasis Bash**
 
